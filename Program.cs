@@ -11,9 +11,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddTransient<IDefaultBusMassTransit, DefaultBusMassTransit>();
-builder.Services.AddTransient<IOtherBusMassTransit, OtherBusMassTransit>();
-builder.Services.AddTransient<Service>();
+builder.Services.AddScoped<IDefaultBusMassTransit, DefaultBusMassTransit>();
+builder.Services.AddScoped<IOtherBusMassTransit, OtherBusMassTransit>();
+builder.Services.AddScoped<Service>();
 
 builder.Services.AddMassTransit(x =>
 {
